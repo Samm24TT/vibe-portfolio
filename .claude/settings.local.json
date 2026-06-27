@@ -1,0 +1,20 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm create *)",
+      "Bash(cp -r /tmp/portfolio-init/* /mnt/c/Users/User/Documents/vibecode/portfolio/)",
+      "Bash(cp /tmp/portfolio-init/.* /mnt/c/Users/User/Documents/vibecode/portfolio/)",
+      "Bash(npm install *)",
+      "Bash(npx astro *)",
+      "Bash(npm run *)",
+      "Bash(git init *)",
+      "Bash(git add *)",
+      "Bash(git commit -m 'feat: initial portfolio with Astro + Tailwind CSS *)",
+      "Bash(git branch *)",
+      "Bash(git remote *)",
+      "Bash(git push *)",
+      "Bash(git commit *)",
+      "Bash(git check-ignore *)"
+    ]
+  }
+}
