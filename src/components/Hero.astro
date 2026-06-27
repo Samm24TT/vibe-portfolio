@@ -20,10 +20,11 @@
       <span class="text-[var(--color-text-primary)]">Nei Lian</span>
     </h1>
 
-    <p class="text-lg md:text-xl text-[var(--color-text-secondary)] max-w-xl mx-auto mb-10 leading-relaxed">
-      I learn by building things. Currently focused on web development
-      and open to internship opportunities.
-    </p>
+    <!-- Typing animation -->
+    <div class="h-8 md:h-10 flex items-center justify-center mb-10">
+      <span class="text-lg md:text-xl text-[var(--color-text-secondary)]" id="typing-text"></span>
+      <span class="w-[3px] h-6 md:h-7 bg-purple-500 ml-1 animate-pulse" id="typing-cursor"></span>
+    </div>
 
     <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
       <a
@@ -48,3 +49,54 @@
     </div>
   </div>
 </section>
+
+<script>
+  const roles = [
+    'CS Student',
+    'Web Developer',
+    'Problem Solver',
+    'Open Source Enthusiast',
+    'Lifelong Learner',
+  ];
+
+  const textEl = document.getElementById('typing-text');
+  const cursorEl = document.getElementById('typing-cursor');
+
+  let roleIndex = 0;
+  let charIndex = 0;
+  let isDeleting = false;
+
+  function type() {
+    const currentRole = roles[roleIndex];
+
+    if (isDeleting) {
+      charIndex--;
+      textEl!.textContent = currentRole.substring(0, charIndex);
+    } else {
+      charIndex++;
+      textEl!.textContent = currentRole.substring(0, charIndex);
+    }
+
+    // Blink cursor faster while typing
+    cursorEl!.style.animation = 'pulse 0.6s ease-in-out infinite';
+
+    let delay = isDeleting ? 40 : 80;
+
+    if (!isDeleting && charIndex === currentRole.length) {
+      // Pause at end
+      delay = 2000;
+      isDeleting = true;
+      cursorEl!.style.animation = 'pulse 1s ease-in-out infinite';
+    } else if (isDeleting && charIndex === 0) {
+      // Move to next role
+      isDeleting = false;
+      roleIndex = (roleIndex + 1) % roles.length;
+      delay = 500;
+    }
+
+    setTimeout(type, delay);
+  }
+
+  // Start typing after a short delay
+  setTimeout(type, 800);
+</script>
