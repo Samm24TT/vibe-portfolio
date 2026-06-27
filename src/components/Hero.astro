@@ -1,0 +1,50 @@
+---
+---
+
+<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
+  <!-- Animated gradient background -->
+  <div class="absolute inset-0 animated-gradient opacity-20"></div>
+
+  <!-- Gradient overlay for readability -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-dark)] to-[var(--color-dark)]"></div>
+
+  <!-- Content -->
+  <div class="relative z-10 text-center px-6 max-w-3xl">
+    <p class="text-sm font-medium tracking-widest uppercase text-[var(--color-text-muted)] mb-4">
+      Computer Science Student · Malaysia
+    </p>
+
+    <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-tight mb-6">
+      <span class="gradient-text">Samuel Bawi</span>
+      <br />
+      <span class="text-[var(--color-text-primary)]">Nei Lian</span>
+    </h1>
+
+    <p class="text-lg md:text-xl text-[var(--color-text-secondary)] max-w-xl mx-auto mb-10 leading-relaxed">
+      I learn by building things. Currently focused on web development
+      and open to internship opportunities.
+    </p>
+
+    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a
+        href="#projects"
+        class="px-8 py-3.5 rounded-full font-semibold text-sm bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-purple-500/20"
+      >
+        View Projects
+      </a>
+      <a
+        href="#contact"
+        class="px-8 py-3.5 rounded-full font-semibold text-sm border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[rgba(255,255,255,0.2)] transition-all duration-300"
+      >
+        Contact Me
+      </a>
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
+    <div class="w-5 h-8 border-2 border-[var(--color-text-muted)] rounded-full flex justify-center">
+      <div class="w-1 h-2 bg-[var(--color-text-muted)] rounded-full mt-1.5 animate-bounce"></div>
+    </div>
+  </div>
+</section>

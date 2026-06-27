@@ -1,0 +1,54 @@
+---
+const facts = [
+  { label: 'Location', value: 'Malaysia' },
+  { label: 'University', value: 'INTI International University' },
+  { label: 'Degree', value: 'BSc Computer Science' },
+  { label: 'Languages', value: 'English, Burmese' },
+  { label: 'Interests', value: 'Open Source, AI Tools, Music' },
+  { label: 'Status', value: 'Open to Internships' },
+];
+---
+
+<section id="about" class="py-24 px-6">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">
+      <span class="gradient-text">About Me</span>
+    </h2>
+    <div class="h-1 w-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-10 fade-in"></div>
+
+    <div class="grid md:grid-cols-2 gap-12 items-start">
+      <!-- Bio -->
+      <div class="fade-in">
+        <p class="text-[var(--color-text-secondary)] text-lg leading-relaxed mb-6">
+          I'm a Computer Science student at INTI International University with
+          hands-on experience in web development. I learn by building real
+          projects — from responsive landing pages to interactive browser games.
+        </p>
+        <p class="text-[var(--color-text-secondary)] text-lg leading-relaxed">
+          When I'm not coding, you'll find me exploring open source projects,
+          experimenting with AI tools, or playing music instruments. I'm always
+          looking for opportunities to grow and contribute to a team.
+        </p>
+      </div>
+
+      <!-- Quick facts -->
+      <div class="glass-card p-6 fade-in">
+        <h3 class="text-sm font-bold uppercase tracking-widest text-[var(--color-text-muted)] mb-5">
+          Quick Facts
+        </h3>
+        <div class="space-y-4">
+          {facts.map((fact) => (
+            <div class="flex items-start gap-4">
+              <span class="text-sm font-semibold text-[var(--color-text-primary)] w-28 shrink-0">
+                {fact.label}
+              </span>
+              <span class="text-sm text-[var(--color-text-secondary)]">
+                {fact.value}
+              </span>
+            </div>
+          ))}
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
