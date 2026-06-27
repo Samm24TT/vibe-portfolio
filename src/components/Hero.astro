@@ -1,51 +1,41 @@
 ---
 ---
 
-<section class="relative min-h-screen flex items-center justify-center overflow-hidden">
-  <!-- Animated gradient background -->
-  <div class="absolute inset-0 animated-gradient opacity-20"></div>
-
-  <!-- Gradient overlay for readability -->
-  <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[var(--color-dark)] to-[var(--color-dark)]"></div>
-
-  <!-- Content -->
-  <div class="relative z-10 text-center px-6 max-w-3xl">
-    <p class="text-sm font-medium tracking-widest uppercase text-[var(--color-text-muted)] mb-4">
+<section class="min-h-screen flex items-center justify-center px-6 pt-14">
+  <div class="max-w-5xl w-full">
+    <!-- Top label -->
+    <p class="text-xs uppercase tracking-[0.3em] text-gray-400 mb-8 fade-in">
       Computer Science Student · Malaysia
     </p>
 
-    <h1 class="text-5xl md:text-7xl font-black tracking-tight leading-tight mb-6">
-      <span class="gradient-text">Samuel Bawi</span>
-      <br />
-      <span class="text-[var(--color-text-primary)]">Nei Lian</span>
+    <!-- Name -->
+    <h1 class="text-6xl md:text-[7rem] font-bold tracking-tighter leading-[0.9] mb-8 font-[var(--font-display)] fade-in">
+      Samuel<br />Bawi Nei Lian
     </h1>
 
     <!-- Typing animation -->
-    <div class="h-8 md:h-10 flex items-center justify-center mb-10">
-      <span class="text-lg md:text-xl text-[var(--color-text-secondary)]" id="typing-text"></span>
-      <span class="w-[3px] h-6 md:h-7 bg-purple-500 ml-1 animate-pulse" id="typing-cursor"></span>
+    <div class="h-8 flex items-center mb-10 fade-in">
+      <span class="text-lg text-gray-500" id="typing-text"></span>
+      <span class="w-[2px] h-5 bg-black ml-0.5 animate-pulse" id="typing-cursor"></span>
     </div>
 
-    <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+    <!-- CTA -->
+    <div class="flex items-center gap-6 fade-in">
       <a
         href="#projects"
-        class="px-8 py-3.5 rounded-full font-semibold text-sm bg-gradient-to-r from-purple-600 to-blue-600 text-white hover:from-purple-500 hover:to-blue-500 transition-all duration-300 shadow-lg shadow-purple-500/20"
+        class="inline-flex items-center gap-2 px-6 py-3 bg-black text-white text-sm font-medium tracking-wide uppercase hover:bg-gray-800 transition-colors"
       >
         View Projects
+        <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+        </svg>
       </a>
       <a
         href="#contact"
-        class="px-8 py-3.5 rounded-full font-semibold text-sm border border-[var(--color-border)] text-[var(--color-text-secondary)] hover:text-[var(--color-text-primary)] hover:border-[rgba(255,255,255,0.2)] transition-all duration-300"
+        class="text-sm uppercase tracking-widest text-gray-500 hover:text-black transition-colors border-b border-gray-300 hover:border-black pb-0.5"
       >
-        Contact Me
+        Contact
       </a>
-    </div>
-  </div>
-
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2">
-    <div class="w-5 h-8 border-2 border-[var(--color-text-muted)] rounded-full flex justify-center">
-      <div class="w-1 h-2 bg-[var(--color-text-muted)] rounded-full mt-1.5 animate-bounce"></div>
     </div>
   </div>
 </section>
@@ -77,18 +67,12 @@
       textEl!.textContent = currentRole.substring(0, charIndex);
     }
 
-    // Blink cursor faster while typing
-    cursorEl!.style.animation = 'pulse 0.6s ease-in-out infinite';
-
     let delay = isDeleting ? 40 : 80;
 
     if (!isDeleting && charIndex === currentRole.length) {
-      // Pause at end
       delay = 2000;
       isDeleting = true;
-      cursorEl!.style.animation = 'pulse 1s ease-in-out infinite';
     } else if (isDeleting && charIndex === 0) {
-      // Move to next role
       isDeleting = false;
       roleIndex = (roleIndex + 1) % roles.length;
       delay = 500;
@@ -97,6 +81,5 @@
     setTimeout(type, delay);
   }
 
-  // Start typing after a short delay
   setTimeout(type, 800);
 </script>

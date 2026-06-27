@@ -5,97 +5,80 @@ const projects = [
     tech: ['Vite', 'React', 'Web Audio API'],
     description: 'Browser-based rhythm game with beat detection powered by the Web Audio API. Game state and note timing managed with React hooks.',
     link: 'https://github.com/Samm24TT/Personal-Project',
-    gradient: 'from-purple-500 to-pink-500',
     image: '/images/beatstrike.svg',
+    number: '01',
   },
   {
     name: 'Meet Landing Page',
     tech: ['HTML', 'CSS', 'Responsive Design'],
     description: 'Mobile-first landing page with fluid typography, media queries, semantic HTML, and accessible markup.',
     link: 'https://github.com/Samm24TT/meet-landing-page',
-    gradient: 'from-blue-500 to-cyan-500',
     image: '/images/meet-landing.svg',
+    number: '02',
   },
   {
     name: 'Testimonials Grid',
     tech: ['HTML', 'CSS Grid'],
     description: 'Multi-breakpoint CSS Grid layout from mobile to desktop. Uses grid template areas for readable, maintainable code.',
     link: 'https://github.com/Samm24TT/Testimonials-grid-section',
-    gradient: 'from-cyan-500 to-green-500',
     image: '/images/testimonials.svg',
+    number: '03',
   },
   {
     name: 'Product Preview Card',
     tech: ['HTML', 'CSS', 'Responsive Design'],
     description: 'Responsive card component with image swapping at breakpoints and pixel-perfect typography and spacing.',
     link: 'https://github.com/Samm24TT/product-preview-card',
-    gradient: 'from-orange-500 to-red-500',
     image: '/images/product-card.svg',
+    number: '04',
   },
 ];
 ---
 
 <section id="projects" class="py-24 px-6">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">
-      <span class="gradient-text">Projects</span>
-    </h2>
-    <div class="h-1 w-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-10 fade-in"></div>
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-xs uppercase tracking-[0.3em] text-gray-400 mb-12 fade-in">Projects</h2>
 
-    <div class="grid md:grid-cols-2 gap-6">
+    <div class="space-y-12">
       {projects.map((project) => (
         <a
           href={project.link}
           target="_blank"
           rel="noopener noreferrer"
-          class="glass-card overflow-hidden group fade-in block"
+          class="group grid md:grid-cols-2 gap-6 fade-in block"
         >
-          <!-- Screenshot preview -->
-          <div class="relative overflow-hidden">
+          <!-- Screenshot -->
+          <div class="overflow-hidden border border-gray-200 group-hover:border-black transition-colors">
             <img
               src={project.image}
               alt={`${project.name} preview`}
-              class="w-full h-48 object-cover object-top group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-48 md:h-56 object-cover object-top grayscale group-hover:grayscale-0 transition-all duration-500"
               loading="lazy"
             />
-            <div class="absolute inset-0 bg-gradient-to-t from-[rgba(10,10,10,0.8)] to-transparent"></div>
           </div>
 
-          <div class="p-6 pt-4">
-            <!-- Gradient accent bar -->
-            <div class={`h-1 w-12 rounded-full bg-gradient-to-r ${project.gradient} mb-4`}></div>
-
-            <div class="flex items-start justify-between mb-3">
-              <h3 class="text-xl font-bold text-[var(--color-text-primary)] group-hover:text-white transition-colors">
-                {project.name}
-              </h3>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                class="w-5 h-5 text-[var(--color-text-muted)] group-hover:text-[var(--color-text-secondary)] transition-colors shrink-0 ml-3"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-              >
-                <path
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                  stroke-width="2"
-                  d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"
-                />
-              </svg>
-            </div>
+          <!-- Info -->
+          <div class="flex flex-col justify-center">
+            <span class="text-xs text-gray-400 font-mono mb-2">{project.number}</span>
+            <h3 class="text-2xl font-bold text-black mb-3 font-[var(--font-display)] group-hover:translate-x-1 transition-transform">
+              {project.name}
+            </h3>
 
             <div class="flex flex-wrap gap-2 mb-4">
               {project.tech.map((t) => (
-                <span class="text-xs font-medium px-2.5 py-1 rounded-full bg-[rgba(255,255,255,0.06)] text-[var(--color-text-muted)]">
+                <span class="text-xs px-2 py-0.5 border border-gray-200 text-gray-500">
                   {t}
                 </span>
               ))}
             </div>
 
-            <p class="text-sm text-[var(--color-text-secondary)] leading-relaxed">
+            <p class="text-sm text-gray-500 leading-relaxed">
               {project.description}
             </p>
+
+            <span class="text-xs uppercase tracking-widest text-gray-400 mt-4 group-hover:text-black transition-colors">
+              View on GitHub →
+            </span>
           </div>
         </a>
       ))}

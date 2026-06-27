@@ -3,43 +3,31 @@ const skillGroups = [
   {
     category: 'Languages',
     skills: ['JavaScript', 'Python', 'Java'],
-    color: 'purple',
   },
   {
     category: 'Frontend',
     skills: ['HTML', 'CSS', 'React', 'Tailwind CSS'],
-    color: 'blue',
   },
   {
     category: 'Tools',
     skills: ['Git', 'GitHub', 'VS Code', 'Claude Code', 'WSL'],
-    color: 'cyan',
   },
 ];
-
-const colorMap: Record<string, string> = {
-  purple: 'border-purple-500/30 text-purple-400 hover:bg-purple-500/10',
-  blue: 'border-blue-500/30 text-blue-400 hover:bg-blue-500/10',
-  cyan: 'border-cyan-500/30 text-cyan-400 hover:bg-cyan-500/10',
-};
 ---
 
 <section id="skills" class="py-24 px-6">
-  <div class="max-w-6xl mx-auto">
-    <h2 class="text-3xl md:text-4xl font-bold mb-4 fade-in">
-      <span class="gradient-text">Technical Skills</span>
-    </h2>
-    <div class="h-1 w-16 bg-gradient-to-r from-purple-500 to-blue-500 rounded-full mb-10 fade-in"></div>
+  <div class="max-w-5xl mx-auto">
+    <h2 class="text-xs uppercase tracking-[0.3em] text-gray-400 mb-12 fade-in">Skills</h2>
 
-    <div class="grid md:grid-cols-3 gap-8">
+    <div class="grid md:grid-cols-3 gap-12">
       {skillGroups.map((group) => (
-        <div class="glass-card p-6 fade-in">
-          <h3 class="text-sm font-bold uppercase tracking-widest text-[var(--color-text-muted)] mb-5">
+        <div class="fade-in">
+          <h3 class="text-sm font-bold uppercase tracking-widest text-black mb-5 border-b border-black pb-3">
             {group.category}
           </h3>
-          <div class="flex flex-wrap gap-2.5">
+          <div class="flex flex-wrap gap-2">
             {group.skills.map((skill) => (
-              <span class={`skill-tag ${colorMap[group.color]}`}>
+              <span class="skill-tag">
                 {skill}
               </span>
             ))}
